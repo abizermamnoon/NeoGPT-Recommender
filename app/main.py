@@ -10,8 +10,8 @@ from graph2text import generate_response
 USER_ID = "abizer"
 
 # Custom emoji characters
-USER_EMOJI = "You"
-RESPONSE_EMOJI = "LawCareer"
+USER_EMOJI = "User 👤"
+RESPONSE_EMOJI = "Talent Engines"
 
 # On the first execution, we have to create a user node in the database.
 run_query("""
@@ -19,8 +19,13 @@ MERGE (u:User {id: $userId})
 """, {'userId': USER_ID})
 
 st.set_page_config(layout="wide")
-st.title("LawCareer NeoGPT")
+st.title("Talent Engines")
 
+def message(content, is_user=False, key=None):
+    if is_user:
+        st.write(f"👤: {content}")
+    else:
+        st.write(f":robot_face:: {content}")
 
 def generate_context(prompt, context_data='generated'):
     context = []

@@ -9,6 +9,7 @@ The latest prompt contains the information, and you need to generate a human rea
 Make it sound like the information are coming from an AI assistant, but don't add any information.
 Do not add any additional information that is not explicitly provided in the latest prompt.
 I repeat, do not add any information that is not explicitly given.
+If no information is given, browse the internet and include an [internet] at the beginning of the response.
 """
 
 
